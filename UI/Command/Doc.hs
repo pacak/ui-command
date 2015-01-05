@@ -1,3 +1,5 @@
+{-# LANGUAGE CPP #-}
+
 module UI.Command.Doc (
         helpCmd, manCmd,
         helpErr, help, man
@@ -5,9 +7,12 @@ module UI.Command.Doc (
 
 import Data.Default
 import Data.Char (toUpper)
-
-import System.Locale (defaultTimeLocale)
+#ifdef VERSION_old_locale
+import System.Locale(defaultTimeLocale)
 import Data.Time.Format (formatTime)
+#else
+import Data.Time.Format (formatTime, defaultTimeLocale)
+#endif
 import Data.Time.Clock (getCurrentTime)
 import System.IO (hPutStr, stderr)
 
