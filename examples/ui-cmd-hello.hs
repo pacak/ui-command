@@ -15,7 +15,7 @@ import UI.Command
 world :: Command ()
 
 world = defCmd {
-       	        cmdName = "world",
+                       cmdName = "world",
                 cmdHandler = worldHandler,
                 cmdCategory = "Greetings",
                 cmdShortDesc = "An implementation of the standard software greeting."
@@ -28,7 +28,7 @@ worldHandler = liftIO $ putStrLn "Hello world!"
 --
 
 times = defCmd {
-       	        cmdName = "times",
+                       cmdName = "times",
                 cmdHandler = timesHandler,
                 cmdCategory = "Cat Math",
                 cmdShortDesc = "A repetition of salutation",
@@ -46,17 +46,17 @@ timesHandler = do
 
 hello :: Application () ()
 hello = def {
-	        appName = "hello",
+                appName = "hello",
                 appVersion = "0.1",
-		appAuthors = ["Joe R. Hacker"],
+                appAuthors = ["Joe R. Hacker"],
                 appBugEmail = "bugs@example.com",
                 appShortDesc = "UI.Command example program",
                 appLongDesc = longDesc,
-	        appCategories = ["Greetings", "Cat Math"],
-		appSeeAlso = ["tractorgen"],
-		appProject = "Haskell",
-	        appCmds = [world, times]
-	}
+                appCategories = ["Greetings", "Cat Math"],
+                appSeeAlso = ["tractorgen"],
+                appProject = "Haskell",
+                appCmds = [world, times]
+        }
 
 longDesc = "a demonstration program for the UI.Command framework."
 
